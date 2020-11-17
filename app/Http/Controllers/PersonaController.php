@@ -35,7 +35,7 @@ class PersonaController extends Controller
 
     }
 
-    public function crear(){
+    public function crear(Request $request){
         $p = new PersonaModel;
 
         $p -> nombre = $request->input('nombre');
