@@ -31,7 +31,7 @@ class PersonaController extends Controller
     
     public function listarUno($id){
         $personas = PersonaModel::where('id',$id)->get();
-        return view('lista', ['personas' => $personas]);
+        return view('lista', ['personas' => $personas, 'username' => 'juancito']);
 
     }
 
