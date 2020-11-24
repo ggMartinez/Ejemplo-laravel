@@ -1,9 +1,11 @@
 @include('templates/header')
 
-@foreach ($personas as $p)
+<h1>Lista de personas</h1>
 
-{{ $p-> id}} {{ $p->nombre }} {{ $p->apellido }} {{ $p->mail }} </br> 
+    @foreach ($personas as $p)
 
-@endforeach
+    <a href='/listado/{{ $p-> id}}'>ID: {{ $p-> id}} </a> {{ $p->nombre }} {{ $p->apellido }} {{ $p->mail }} </br> 
+
+    @endforeach
 
 @include('templates/footer')

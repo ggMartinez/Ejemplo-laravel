@@ -35,4 +35,6 @@ Route::get('/modificacion', function () {
 Route::get('/listado/{id}', 'PersonaController@listarUnaPersona');
 Route::get('/listado', 'PersonaController@listarTodasLasPersonas');
 
+Route::post('/alta', 'PersonaController@agregarPersona');
+
 

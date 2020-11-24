@@ -3,7 +3,12 @@
 
     <h1>Alta de Persona</h1>
     
-    <form action="/persona/crear" method="post">
+    @isset($creado)
+        <h2>Usuario creado</h2>
+    @endisset
+
+    <form action="/alta" method="post">
+    
     @csrf
 
     Nombre: <input type="text" name=nombre /> <br />
