@@ -1,5 +1,6 @@
 @include('templates/header')
 
+    <h1>Baja de persona</h1>
     <form action="/persona/crear" method="post">
     @csrf
 

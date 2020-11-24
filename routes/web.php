@@ -16,16 +16,23 @@ use App\Http\Controllers\PersonaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 
 
-
-Route::get('/inicio/{nombre}/{apellido}/{correo}', 'PersonaController@hola');
-
-Route::get('/lista', 'PersonaController@listarTodos');
-Route::get('/lista/{id}', 'PersonaController@listarUno');
-Route::get('/persona', function () {
-    return view('persona');
+Route::get('/alta', function () {
+    return view('alta');
 });
-Route::post('/persona/crear','PersonaController@crear');
+
+Route::get('/baja', function () {
+    return view('baja');
+});
+
+Route::get('/modificacion', function () {
+    return view('modificacion');
+});
+
+Route::get('/listado/{id}', 'PersonaController@listarUnaPersona');
+Route::get('/listado', 'PersonaController@listarTodasLasPersonas');
+
+

@@ -2,10 +2,6 @@
 
 <h1>Pagina de inicio </h1>
 
-@isset($user)
-
-    Hola {{ $user }} 
-
-@endisset
+Bienvenido
 
 @include('templates/footer')
