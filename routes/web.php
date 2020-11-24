@@ -28,14 +28,13 @@ Route::get('/baja', function () {
     return view('baja');
 });
 
-Route::get('/modificacion', function () {
-    return view('modificacion');
-});
+Route::get('/modificacion/{id}', 'PersonaController@listarPersonaParaModificar') ;
 
 Route::get('/listado/{id}', 'PersonaController@listarUnaPersona');
 Route::get('/listado', 'PersonaController@listarTodasLasPersonas');
 
 Route::post('/alta', 'PersonaController@agregarPersona');
 Route::post('/baja', 'PersonaController@eliminarPersona');
+Route::post('/modificacion', 'PersonaController@modificarPersona') ;
 
 

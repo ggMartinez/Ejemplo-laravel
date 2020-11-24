@@ -41,9 +41,6 @@
             <li class="nav-item">
               <a class="nav-link" href="/baja">Baja</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/modificacion">Modificacion</a>
-            </li>
           </ul>
           
         </div>

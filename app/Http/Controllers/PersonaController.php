@@ -21,6 +21,12 @@ class PersonaController extends Controller
     }
 
 
+    public function listarPersonaParaModificar($id){
+        $persona = PersonaModel::where('id',$id)->first();
+        return view('modificacion', ['persona' => $persona]);
+    }
+
+
     public function agregarPersona(Request $request){
         $p = new PersonaModel;
 
@@ -46,19 +52,22 @@ class PersonaController extends Controller
         }
     }
 
-    public function hola($nombre,$apellido,$correo){
-        $p = new PersonaModel;
+    public function modificarPersona(Request $request){
+        $p = PersonaModel::find($request->input('id'));
 
-        $p -> nombre = $nombre;
-        $p -> apellido = $apellido;
-        $p -> mail = $correo;
+        $p->nombre = $request->input('nombre');
+        $p->apellido = $request->input('apellido');
+        $p->mail = $request->input('mail');
 
-        $p -> save();
+        $modificado = $request->input('id');
 
+        $p->save();
 
-        return view('inicio', ['user' => $nombre]);
+        return view('modificacion',['modificado' => $modificado]);
+
 
     }
+
 
 
 }
