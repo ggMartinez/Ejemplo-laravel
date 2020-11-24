@@ -34,6 +34,18 @@ class PersonaController extends Controller
 
     }
 
+    public function eliminarPersona(Request $request){
+        $p = PersonaModel::find($request->input('id'));
+        if($p){
+            $p->delete();
+            $eliminado = $request->input('id');
+            return view('baja',['eliminado' => $eliminado]);
+        }
+        else {
+            return view('baja',['error' => "No existe"]);
+        }
+    }
+
     public function hola($nombre,$apellido,$correo){
         $p = new PersonaModel;
 
