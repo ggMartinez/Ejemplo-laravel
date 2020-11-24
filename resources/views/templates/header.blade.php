@@ -35,12 +35,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="/listado">Listado</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/alta">Alta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/baja">Baja</a>
-            </li>
+
           </ul>
           
         </div>

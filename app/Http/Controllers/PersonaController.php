@@ -26,6 +26,11 @@ class PersonaController extends Controller
         return view('modificacion', ['persona' => $persona]);
     }
 
+    public function listarPersonaParaEliminar($id){
+        $persona = PersonaModel::where('id',$id)->first();
+        return view('baja', ['persona' => $persona]);
+    }
+
 
     public function agregarPersona(Request $request){
         $p = new PersonaModel;
@@ -42,14 +47,11 @@ class PersonaController extends Controller
 
     public function eliminarPersona(Request $request){
         $p = PersonaModel::find($request->input('id'));
-        if($p){
-            $p->delete();
-            $eliminado = $request->input('id');
-            return view('baja',['eliminado' => $eliminado]);
-        }
-        else {
-            return view('baja',['error' => "No existe"]);
-        }
+        $p->delete();
+        $eliminado = $request->input('id');
+        
+        return view('baja',['eliminado' => $eliminado]);
+        
     }
 
     public function modificarPersona(Request $request){

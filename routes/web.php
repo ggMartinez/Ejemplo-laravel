@@ -24,11 +24,9 @@ Route::get('/alta', function () {
     return view('alta');
 });
 
-Route::get('/baja', function () {
-    return view('baja');
-});
 
 Route::get('/modificacion/{id}', 'PersonaController@listarPersonaParaModificar') ;
+Route::get('/baja/{id}', 'PersonaController@listarPersonaParaEliminar') ;
 
 Route::get('/listado/{id}', 'PersonaController@listarUnaPersona');
 Route::get('/listado', 'PersonaController@listarTodasLasPersonas');

@@ -1,19 +1,25 @@
 @include('templates/header')
 
-    <h1>Baja de persona</h1>
+
+    <h1>Baja de Persona</h1>
+    
     @isset($eliminado)
-        Persona numero {{ $eliminado }} eliminado
+        <h2>Usuario {{ $eliminado }} eliminado</h2>
     @endisset
 
-    @isset($error)
-        Hubo un error: {{ $error }}
-    @endisset
-    <form action="/baja" method="post">
-    @csrf
+    @isset($persona)
 
-    ID: <input type="text" name=id /> <br />
+        <form action="/baja" method="post">
+        
+            @csrf
 
-    <input type="submit">  </input>
-    </form>
+            ID: <input type="text" name=id value={{ $persona->id }} readonly /> <br />
+            Nombre: <input type="text" name=nombre value={{ $persona->nombre  }} readonly /> <br />
+            Apellido: <input type="text" name=apellido value={{ $persona->apellido }} readonly /> <br />
+            Mail: <input type="text" name=mail value={{ $persona->mail }} readonly /> <br />
+            <input type="submit"> </input>
+        </form>
+
+        @endisset
 
 @include('templates/footer')

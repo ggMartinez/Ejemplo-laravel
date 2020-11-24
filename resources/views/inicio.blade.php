@@ -2,6 +2,6 @@
 
 <h1>Pagina de inicio </h1>
 
-Bienvenido
+No sirvo para absolutamente nada
 
 @include('templates/footer')

@@ -14,7 +14,7 @@
     Nombre: <input type="text" name=nombre /> <br />
     Apellido: <input type="text" name=apellido /> <br />
     Mail: <input type="text" name=mail /> <br />
-    <input type="submit"> Enviar </input>
+    <input type="submit" />   
     </form>
 
 @include('templates/footer')
