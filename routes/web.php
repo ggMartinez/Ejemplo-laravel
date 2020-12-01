@@ -19,15 +19,22 @@ Route::get('/', function () {
     return view('inicio');
 });
 
+
 Route::get('/login', function () {
     return view('login');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 
 
 Route::get('/alta', function () {
     return view('alta');
-});
+})->middleware('autenticacion');
+
+
 
 
 Route::get('/modificacion/{id}', 'PersonaController@listarPersonaParaModificar') ;
@@ -39,5 +46,5 @@ Route::get('/listado', 'PersonaController@listarTodasLasPersonas');
 Route::post('/alta', 'PersonaController@agregarPersona');
 Route::post('/baja', 'PersonaController@eliminarPersona');
 Route::post('/modificacion', 'PersonaController@modificarPersona') ;
-
+Route::post('/login','PersonaController@autenticarPersona');
 

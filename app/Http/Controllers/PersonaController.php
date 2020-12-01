@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PersonaModel;
+use Closure;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class PersonaController extends Controller
@@ -68,6 +71,18 @@ class PersonaController extends Controller
         return view('modificacion',['modificado' => $modificado]);
 
 
+    }
+
+    public function autenticarPersona(Request $request,Closure $next){
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
+        else{
+            return view('login',['error' => "true"]);
+        }
     }
 
 
