@@ -73,7 +73,7 @@ class PersonaController extends Controller
 
     }
 
-    public function autenticarPersona(Request $request,Closure $next){
+    public function autenticarPersona(Request $request){
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
